@@ -1,41 +1,40 @@
-# Simple static HTTP server for CampusVibe using .NET HttpListener
-param([int]$Port = 3000)
+param([int]$Port = 8080)
 
 $listener = New-Object System.Net.HttpListener
-$prefix = "http://localhost:$Port/"
-$listener.Prefixes.Add($prefix)
+$listener.Prefixes.Add("http://localhost:$Port/")
+$listener.Prefixes.Add("http://127.0.0.1:$Port/")
+
+$root = "C:\Users\HP\.gemini\antigravity\scratch\college-events"
+
+$mimeTypes = @{
+    ".html" = "text/html; charset=utf-8"
+    ".css"  = "text/css; charset=utf-8"
+    ".js"   = "application/javascript; charset=utf-8"
+    ".json" = "application/json; charset=utf-8"
+    ".png"  = "image/png"
+    ".jpg"  = "image/jpeg"
+    ".jpeg" = "image/jpeg"
+    ".svg"  = "image/svg+xml"
+    ".ico"  = "image/x-icon"
+}
 
 try {
     $listener.Start()
-    Write-Host "CampusVibe Server running at $prefix"
-    Write-Host "Press Ctrl+C to stop."
-
-    $root = $PSScriptRoot
-    if (-not $root) { $root = Get-Location }
-
-    $mimeTypes = @{
-        ".html" = "text/html"
-        ".css"  = "text/css"
-        ".js"   = "application/javascript"
-        ".json" = "application/json"
-        ".png"  = "image/png"
-        ".jpg"  = "image/jpeg"
-        ".jpeg" = "image/jpeg"
-        ".svg"  = "image/svg+xml"
-        ".ico"  = "image/x-icon"
-    }
-
+    Write-Host "CampusVibe Server listening on http://localhost:$Port/ and http://127.0.0.1:$Port/"
+    
     while ($listener.IsListening) {
         $context = $listener.GetContext()
         $request = $context.Request
         $response = $context.Response
 
-        $urlPath = $request.Url.LocalPath.TrimStart('/')
-        if ([string]::IsNullOrWhiteSpace($urlPath)) {
-            $urlPath = "index.html"
+        $rawPath = $request.Url.AbsolutePath.TrimStart('/')
+        if ([string]::IsNullOrWhiteSpace($rawPath)) {
+            $rawPath = "index.html"
         }
 
-        $filePath = Join-Path $root $urlPath
+        # URL decode path
+        $decodedPath = [System.Uri]::UnescapeDataString($rawPath)
+        $filePath = Join-Path $root $decodedPath
 
         if (Test-Path $filePath -PathType Leaf) {
             $ext = [System.IO.Path]::GetExtension($filePath).ToLower()
@@ -47,14 +46,21 @@ try {
             $response.OutputStream.Write($bytes, 0, $bytes.Length)
         } else {
             $response.StatusCode = 404
-            $notFound = [System.Text.Encoding]::UTF8.GetBytes("404 Not Found")
+            $notFound = [System.Text.Encoding]::UTF8.GetBytes("<h1>404 Not Found</h1><p>File not found: $decodedPath</p>")
+            $response.ContentType = "text/html; charset=utf-8"
+            $response.ContentLength64 = $notFound.Length
             $response.OutputStream.Write($notFound, 0, $notFound.Length)
         }
 
         $response.OutputStream.Close()
     }
 }
+catch {
+    Write-Error $_
+}
 finally {
-    $listener.Stop()
-    $listener.Close()
+    if ($listener -ne $null -and $listener.IsListening) {
+        $listener.Stop()
+        $listener.Close()
+    }
 }
