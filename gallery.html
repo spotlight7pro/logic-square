@@ -1,0 +1,223 @@
+<!DOCTYPE html>
+<html lang="en" data-theme="light">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <meta name="description" content="Explore photos and memories from previous cultural nights, hackathons, sports tournaments, and festivals at CampusVibe." />
+  <title>Campus Gallery | CampusVibe</title>
+  
+  <!-- CSS Stylesheet -->
+  <link rel="stylesheet" href="css/style.css" />
+</head>
+<body>
+
+  <!-- Site Header & Global Navigation -->
+  <header class="site-header">
+    <div class="container">
+      <nav class="navbar" aria-label="Main Navigation">
+        <!-- Logo -->
+        <a href="index.html" class="brand-logo">
+          <div class="brand-icon">⚡</div>
+          <div>
+            CampusVibe
+            <span class="brand-tagline-sub">College Event Hub</span>
+          </div>
+        </a>
+
+        <!-- Desktop Navigation Links -->
+        <ul class="nav-links">
+          <li><a href="index.html" class="nav-link">Home</a></li>
+          <li><a href="events.html" class="nav-link">Events</a></li>
+          <li><a href="clubs.html" class="nav-link">Clubs</a></li>
+          <li><a href="gallery.html" class="nav-link active">Gallery</a></li>
+          <li><a href="about.html" class="nav-link">About</a></li>
+        </ul>
+
+        <!-- Right Actions -->
+        <div class="nav-actions">
+          <!-- Search Trigger -->
+          <button type="button" class="icon-btn search-modal-trigger" title="Search events (Ctrl+K)" aria-label="Search Events">
+            🔍
+          </button>
+
+          <!-- Dark Mode Toggle -->
+          <button type="button" class="icon-btn theme-toggle-btn" title="Toggle Theme" aria-label="Toggle Theme">
+            <span class="theme-icon">🌙</span>
+          </button>
+
+          <!-- Register CTA -->
+          <a href="register.html" class="btn btn-primary btn-sm">Register Now</a>
+
+          <!-- Mobile Hamburger Toggle -->
+          <button type="button" class="hamburger-btn" aria-label="Open navigation menu" aria-expanded="false">
+            <span></span>
+            <span></span>
+            <span></span>
+          </button>
+        </div>
+      </nav>
+    </div>
+
+    <!-- Mobile Drawer Menu -->
+    <div class="mobile-drawer" aria-label="Mobile Navigation Menu">
+      <a href="index.html" class="nav-link">🏠 Home</a>
+      <a href="events.html" class="nav-link">📅 Events</a>
+      <a href="clubs.html" class="nav-link">👥 Clubs</a>
+      <a href="gallery.html" class="nav-link active">🖼️ Gallery</a>
+      <a href="about.html" class="nav-link">ℹ️ About CampusVibe</a>
+      <hr style="border: 0; border-top: 1px solid var(--border-color); margin: 0.5rem 0;" />
+      <a href="register.html" class="btn btn-primary" style="width: 100%;">Online Registration &rarr;</a>
+    </div>
+  </header>
+
+  <main>
+    <!-- Page Hero Banner -->
+    <section class="section" style="padding-top: 3.5rem; padding-bottom: 2rem; background: var(--brand-gradient-subtle); border-bottom: 1px solid var(--border-color);">
+      <div class="container">
+        <div class="section-header" style="margin-bottom: 0;">
+          <span class="section-tag">📸 Campus Memories</span>
+          <h1 class="section-title">Event Photo Gallery</h1>
+          <p class="section-subtitle">
+            Relive the unforgettable moments from past festivals, technical expos, robotics battles, and sports tournaments.
+          </p>
+        </div>
+      </div>
+    </section>
+
+    <!-- Gallery Filter & Grid Section -->
+    <section class="section" style="padding-top: 3rem;">
+      <div class="container">
+        
+        <!-- Category Filter Tabs -->
+        <div class="filter-categories" style="justify-content: center; margin-bottom: 2.5rem;" role="toolbar" aria-label="Filter gallery by category">
+          <button type="button" class="filter-btn gallery-filter-btn active" data-category="All">
+            ✨ All Photos
+          </button>
+          <button type="button" class="filter-btn gallery-filter-btn" data-category="Cultural">
+            🎭 Cultural
+          </button>
+          <button type="button" class="filter-btn gallery-filter-btn" data-category="Technical">
+            💻 Technical
+          </button>
+          <button type="button" class="filter-btn gallery-filter-btn" data-category="Sports">
+            ⚽ Sports
+          </button>
+          <button type="button" class="filter-btn gallery-filter-btn" data-category="Workshops">
+            🛠️ Workshops
+          </button>
+          <button type="button" class="filter-btn gallery-filter-btn" data-category="Festivals">
+            🎪 Festivals
+          </button>
+        </div>
+
+        <!-- Responsive Gallery Grid -->
+        <div class="gallery-grid" id="gallery-container">
+          <!-- Populated by js/gallery.js -->
+        </div>
+
+      </div>
+    </section>
+  </main>
+
+  <!-- Interactive Lightbox Modal -->
+  <div id="gallery-lightbox-modal" class="lightbox-modal" role="dialog" aria-modal="true" aria-label="Expanded Image View">
+    <button type="button" id="lightbox-close-btn" class="lightbox-close" aria-label="Close photo preview">✕</button>
+    <div class="lightbox-content">
+      <img id="lightbox-image" class="lightbox-image" src="" alt="Enlarged gallery photo" />
+      <div class="lightbox-caption">
+        <h4 id="lightbox-title">Event Title</h4>
+        <p id="lightbox-desc">Category &bull; Date</p>
+      </div>
+    </div>
+  </div>
+
+  <!-- Global Quick-Search Modal -->
+  <div id="global-search-modal" class="search-modal-backdrop" role="dialog" aria-modal="true" aria-label="Quick Search Events">
+    <div class="search-modal-box">
+      <div class="search-modal-header">
+        <span style="position: absolute; left: 1.25rem; top: 50%; transform: translateY(-50%); font-size: 1.1rem; color: var(--text-muted);">🔍</span>
+        <input type="text" id="global-search-input" class="search-modal-input" placeholder="Type event name, category, or venue..." />
+        <button type="button" id="global-search-close" class="modal-close-btn" style="top: 0.75rem; right: 0.75rem;" aria-label="Close search">✕</button>
+      </div>
+      <div id="global-search-results" class="search-modal-results">
+        <!-- Live search matches -->
+      </div>
+      <div style="padding: 0.75rem 1.25rem; background: var(--bg-surface-elevated); border-top: 1px solid var(--border-color); font-size: 0.78rem; color: var(--text-muted); display: flex; justify-content: space-between;">
+        <span>Press <strong>ESC</strong> to dismiss</span>
+        <span>CampusVibe Event Discovery</span>
+      </div>
+    </div>
+  </div>
+
+  <!-- Professional Footer -->
+  <footer class="site-footer">
+    <div class="container">
+      <div class="footer-grid">
+        <div class="footer-brand">
+          <a href="index.html" class="brand-logo">
+            <div class="brand-icon">⚡</div>
+            CampusVibe
+          </a>
+          <p>
+            "Discover. Participate. Experience." — The centralized college event discovery platform designed for campus vibrancy and student engagement.
+          </p>
+          <div class="footer-social-links">
+            <a href="https://instagram.com" target="_blank" rel="noopener noreferrer" class="social-icon-btn" aria-label="Instagram">📸</a>
+            <a href="https://facebook.com" target="_blank" rel="noopener noreferrer" class="social-icon-btn" aria-label="Facebook">📘</a>
+            <a href="https://linkedin.com" target="_blank" rel="noopener noreferrer" class="social-icon-btn" aria-label="LinkedIn">💼</a>
+            <a href="https://twitter.com" target="_blank" rel="noopener noreferrer" class="social-icon-btn" aria-label="X Twitter">🐦</a>
+          </div>
+        </div>
+
+        <div>
+          <h4 class="footer-heading">Navigation</h4>
+          <ul class="footer-nav">
+            <li><a href="index.html" class="footer-link">Home</a></li>
+            <li><a href="events.html" class="footer-link">Explore Events</a></li>
+            <li><a href="clubs.html" class="footer-link">Student Clubs</a></li>
+            <li><a href="gallery.html" class="footer-link">Campus Gallery</a></li>
+            <li><a href="about.html" class="footer-link">About CampusVibe</a></li>
+          </ul>
+        </div>
+
+        <div>
+          <h4 class="footer-heading">Categories</h4>
+          <ul class="footer-nav">
+            <li><a href="events.html?category=Technical" class="footer-link">Technical & Coding</a></li>
+            <li><a href="events.html?category=Cultural" class="footer-link">Cultural & Music</a></li>
+            <li><a href="events.html?category=Sports" class="footer-link">Athletics & Tournaments</a></li>
+            <li><a href="events.html?category=Workshops" class="footer-link">Hands-on Workshops</a></li>
+            <li><a href="events.html?category=Competitions" class="footer-link">Contests & Debates</a></li>
+          </ul>
+        </div>
+
+        <div>
+          <h4 class="footer-heading">Contact & Help</h4>
+          <ul class="footer-nav">
+            <li style="color: var(--text-secondary); font-size: 0.92rem;">✉️ campusvibe@example.com</li>
+            <li style="color: var(--text-secondary); font-size: 0.92rem;">📍 Student Activity Center, Block B</li>
+            <li style="color: var(--text-secondary); font-size: 0.92rem;">🕒 Mon–Fri: 9:00 AM – 5:00 PM</li>
+            <li style="margin-top: 0.75rem;">
+              <a href="register.html" class="btn btn-outline btn-sm" style="width: 100%;">Online Registration &rarr;</a>
+            </li>
+          </ul>
+        </div>
+      </div>
+
+      <div class="footer-bottom">
+        <div>&copy; 2026 CampusVibe. All rights reserved. (Fictional College Event Portal)</div>
+        <div style="display: flex; gap: 1.5rem;">
+          <a href="about.html" class="footer-link">Privacy Policy</a>
+          <a href="about.html" class="footer-link">Terms of Service</a>
+          <a href="about.html" class="footer-link">Code of Conduct</a>
+        </div>
+      </div>
+    </div>
+  </footer>
+
+  <!-- Scripts -->
+  <script src="js/data.js"></script>
+  <script src="js/script.js"></script>
+  <script src="js/gallery.js"></script>
+</body>
+</html>

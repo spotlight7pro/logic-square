@@ -1,0 +1,323 @@
+<!DOCTYPE html>
+<html lang="en" data-theme="light">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <meta name="description" content="Explore student clubs and societies driving innovation, arts, sports, and culture at CampusVibe." />
+  <title>Student Clubs | CampusVibe</title>
+  
+  <!-- CSS Stylesheet -->
+  <link rel="stylesheet" href="css/style.css" />
+</head>
+<body>
+
+  <!-- Site Header & Global Navigation -->
+  <header class="site-header">
+    <div class="container">
+      <nav class="navbar" aria-label="Main Navigation">
+        <!-- Logo -->
+        <a href="index.html" class="brand-logo">
+          <div class="brand-icon">⚡</div>
+          <div>
+            CampusVibe
+            <span class="brand-tagline-sub">College Event Hub</span>
+          </div>
+        </a>
+
+        <!-- Desktop Navigation Links -->
+        <ul class="nav-links">
+          <li><a href="index.html" class="nav-link">Home</a></li>
+          <li><a href="events.html" class="nav-link">Events</a></li>
+          <li><a href="clubs.html" class="nav-link active">Clubs</a></li>
+          <li><a href="gallery.html" class="nav-link">Gallery</a></li>
+          <li><a href="about.html" class="nav-link">About</a></li>
+        </ul>
+
+        <!-- Right Actions -->
+        <div class="nav-actions">
+          <!-- Search Trigger -->
+          <button type="button" class="icon-btn search-modal-trigger" title="Search events (Ctrl+K)" aria-label="Search Events">
+            🔍
+          </button>
+
+          <!-- Dark Mode Toggle -->
+          <button type="button" class="icon-btn theme-toggle-btn" title="Toggle Theme" aria-label="Toggle Theme">
+            <span class="theme-icon">🌙</span>
+          </button>
+
+          <!-- Register CTA -->
+          <a href="register.html" class="btn btn-primary btn-sm">Register Now</a>
+
+          <!-- Mobile Hamburger Toggle -->
+          <button type="button" class="hamburger-btn" aria-label="Open navigation menu" aria-expanded="false">
+            <span></span>
+            <span></span>
+            <span></span>
+          </button>
+        </div>
+      </nav>
+    </div>
+
+    <!-- Mobile Drawer Menu -->
+    <div class="mobile-drawer" aria-label="Mobile Navigation Menu">
+      <a href="index.html" class="nav-link">🏠 Home</a>
+      <a href="events.html" class="nav-link">📅 Events</a>
+      <a href="clubs.html" class="nav-link active">👥 Clubs</a>
+      <a href="gallery.html" class="nav-link">🖼️ Gallery</a>
+      <a href="about.html" class="nav-link">ℹ️ About CampusVibe</a>
+      <hr style="border: 0; border-top: 1px solid var(--border-color); margin: 0.5rem 0;" />
+      <a href="register.html" class="btn btn-primary" style="width: 100%;">Online Registration &rarr;</a>
+    </div>
+  </header>
+
+  <main>
+    <!-- Page Hero Banner -->
+    <section class="section" style="padding-top: 3.5rem; padding-bottom: 2rem; background: var(--brand-gradient-subtle); border-bottom: 1px solid var(--border-color);">
+      <div class="container">
+        <div class="section-header" style="margin-bottom: 0;">
+          <span class="section-tag">👥 Campus Communities</span>
+          <h1 class="section-title">Student Clubs & Societies</h1>
+          <p class="section-subtitle">
+            Meet the student-led societies organizing competitions, workshops, festivals, and cultural events across the campus.
+          </p>
+        </div>
+      </div>
+    </section>
+
+    <!-- Clubs Grid Section -->
+    <section class="section" style="padding-top: 3.5rem;">
+      <div class="container">
+        <div class="clubs-grid" id="clubs-container">
+          
+          <!-- Club 1: Coding Club -->
+          <article class="club-card">
+            <div class="club-banner">
+              <img src="https://images.unsplash.com/photo-1522071820081-009f0129c71c?auto=format&fit=crop&w=800&q=80" alt="Coding Club" />
+              <div class="club-icon-badge">💻</div>
+            </div>
+            <div class="club-body">
+              <h2 class="club-name">Coding Club</h2>
+              <div class="club-lead">Aarav Sharma &bull; President</div>
+              <p class="club-desc">
+                Organizes 24-hour hackathons, algorithmic coding competitions, competitive programming drills, and practical web/mobile app development workshops.
+              </p>
+              <div class="club-info-list">
+                <div>📅 <strong>Meets:</strong> Every Wed & Fri at 5:00 PM (Lab 3)</div>
+                <div>👥 <strong>Community:</strong> 250+ Members</div>
+              </div>
+              <div style="display: flex; justify-content: space-between; align-items: center; margin-top: auto;">
+                <span class="badge badge-technical">3 Upcoming Events</span>
+                <a href="events.html?category=Technical" class="btn btn-outline btn-sm">View Events &rarr;</a>
+              </div>
+            </div>
+          </article>
+
+          <!-- Club 2: Cultural Club -->
+          <article class="club-card">
+            <div class="club-banner">
+              <img src="https://images.unsplash.com/photo-1516450360452-9312f5e86fc7?auto=format&fit=crop&w=800&q=80" alt="Cultural Club" />
+              <div class="club-icon-badge">🎭</div>
+            </div>
+            <div class="club-body">
+              <h2 class="club-name">Cultural Club</h2>
+              <div class="club-lead">Priya Nair &bull; Secretary</div>
+              <p class="club-desc">
+                The creative heartbeat of the campus — hosting music concerts, traditional & western dance troupes, theatre productions, drama festivals, and art exhibitions.
+              </p>
+              <div class="club-info-list">
+                <div>📅 <strong>Meets:</strong> Tue & Thu at 4:30 PM (Amphitheatre)</div>
+                <div>👥 <strong>Community:</strong> 320+ Members</div>
+              </div>
+              <div style="display: flex; justify-content: space-between; align-items: center; margin-top: auto;">
+                <span class="badge badge-cultural">3 Upcoming Events</span>
+                <a href="events.html?category=Cultural" class="btn btn-outline btn-sm">View Events &rarr;</a>
+              </div>
+            </div>
+          </article>
+
+          <!-- Club 3: Photography Club -->
+          <article class="club-card">
+            <div class="club-banner">
+              <img src="https://images.unsplash.com/photo-1452587925148-ce544e77e70d?auto=format&fit=crop&w=800&q=80" alt="Photography Club" />
+              <div class="club-icon-badge">📸</div>
+            </div>
+            <div class="club-body">
+              <h2 class="club-name">Photography Club</h2>
+              <div class="club-lead">Rohan Varma &bull; Lead Visualist</div>
+              <p class="club-desc">
+                Passionate visual storytellers capturing every campus event, organizing photo walks, darkroom workshops, and annual multi-theme photography competitions.
+              </p>
+              <div class="club-info-list">
+                <div>📅 <strong>Meets:</strong> Saturdays at 10:00 AM (Central Courtyard)</div>
+                <div>👥 <strong>Community:</strong> 140+ Members</div>
+              </div>
+              <div style="display: flex; justify-content: space-between; align-items: center; margin-top: auto;">
+                <span class="badge badge-competitions">1 Upcoming Event</span>
+                <a href="events.html?category=Competitions" class="btn btn-outline btn-sm">View Events &rarr;</a>
+              </div>
+            </div>
+          </article>
+
+          <!-- Club 4: Robotics Club -->
+          <article class="club-card">
+            <div class="club-banner">
+              <img src="https://images.unsplash.com/photo-1581092160607-ee22621dd758?auto=format&fit=crop&w=800&q=80" alt="Robotics Club" />
+              <div class="club-icon-badge">🤖</div>
+            </div>
+            <div class="club-body">
+              <h2 class="club-name">Robotics Club</h2>
+              <div class="club-lead">Ananya Patel &bull; Technical Head</div>
+              <p class="club-desc">
+                Dedicated to designing combat robots, autonomous drones, IoT embedded systems, and representing the university in national hardware challenges.
+              </p>
+              <div class="club-info-list">
+                <div>📅 <strong>Meets:</strong> Mon & Fri at 4:00 PM (Robotics Lab)</div>
+                <div>👥 <strong>Community:</strong> 180+ Members</div>
+              </div>
+              <div style="display: flex; justify-content: space-between; align-items: center; margin-top: auto;">
+                <span class="badge badge-workshops">2 Upcoming Events</span>
+                <a href="events.html?category=Workshops" class="btn btn-outline btn-sm">View Events &rarr;</a>
+              </div>
+            </div>
+          </article>
+
+          <!-- Club 5: Literary Club -->
+          <article class="club-card">
+            <div class="club-banner">
+              <img src="https://images.unsplash.com/photo-1457369804613-52c61a468e7d?auto=format&fit=crop&w=800&q=80" alt="Literary Club" />
+              <div class="club-icon-badge">📖</div>
+            </div>
+            <div class="club-body">
+              <h2 class="club-name">Literary Club</h2>
+              <div class="club-lead">Kavya Menon &bull; Debate Captain</div>
+              <p class="club-desc">
+                Fostering vibrant discourse through parliamentary debates, creative writing anthologies, poetry slams, book clubs, and public speaking bootcamps.
+              </p>
+              <div class="club-info-list">
+                <div>📅 <strong>Meets:</strong> Thursdays at 5:00 PM (Library Room)</div>
+                <div>👥 <strong>Community:</strong> 110+ Members</div>
+              </div>
+              <div style="display: flex; justify-content: space-between; align-items: center; margin-top: auto;">
+                <span class="badge badge-competitions">1 Upcoming Event</span>
+                <a href="events.html?category=Competitions" class="btn btn-outline btn-sm">View Events &rarr;</a>
+              </div>
+            </div>
+          </article>
+
+          <!-- Club 6: Sports Club -->
+          <article class="club-card">
+            <div class="club-banner">
+              <img src="https://images.unsplash.com/photo-1461896836934-ffe607ba8211?auto=format&fit=crop&w=800&q=80" alt="Sports Club" />
+              <div class="club-icon-badge">🏆</div>
+            </div>
+            <div class="club-body">
+              <h2 class="club-name">Sports Club</h2>
+              <div class="club-lead">Vikram Chauhan &bull; Sports Secretary</div>
+              <p class="club-desc">
+                Promotes fitness, teamwork, and athletic excellence through inter-department leagues, coaching camps, annual athletics meets, and varsity tournaments.
+              </p>
+              <div class="club-info-list">
+                <div>📅 <strong>Meets:</strong> Daily 6:00 AM & 5:00 PM (Sports Complex)</div>
+                <div>👥 <strong>Community:</strong> 400+ Athletes</div>
+              </div>
+              <div style="display: flex; justify-content: space-between; align-items: center; margin-top: auto;">
+                <span class="badge badge-sports">2 Upcoming Events</span>
+                <a href="events.html?category=Sports" class="btn btn-outline btn-sm">View Events &rarr;</a>
+              </div>
+            </div>
+          </article>
+
+        </div>
+      </div>
+    </section>
+  </main>
+
+  <!-- Global Quick-Search Modal -->
+  <div id="global-search-modal" class="search-modal-backdrop" role="dialog" aria-modal="true" aria-label="Quick Search Events">
+    <div class="search-modal-box">
+      <div class="search-modal-header">
+        <span style="position: absolute; left: 1.25rem; top: 50%; transform: translateY(-50%); font-size: 1.1rem; color: var(--text-muted);">🔍</span>
+        <input type="text" id="global-search-input" class="search-modal-input" placeholder="Type event name, category, or venue..." />
+        <button type="button" id="global-search-close" class="modal-close-btn" style="top: 0.75rem; right: 0.75rem;" aria-label="Close search">✕</button>
+      </div>
+      <div id="global-search-results" class="search-modal-results">
+        <!-- Live search matches -->
+      </div>
+      <div style="padding: 0.75rem 1.25rem; background: var(--bg-surface-elevated); border-top: 1px solid var(--border-color); font-size: 0.78rem; color: var(--text-muted); display: flex; justify-content: space-between;">
+        <span>Press <strong>ESC</strong> to dismiss</span>
+        <span>CampusVibe Event Discovery</span>
+      </div>
+    </div>
+  </div>
+
+  <!-- Professional Footer -->
+  <footer class="site-footer">
+    <div class="container">
+      <div class="footer-grid">
+        <div class="footer-brand">
+          <a href="index.html" class="brand-logo">
+            <div class="brand-icon">⚡</div>
+            CampusVibe
+          </a>
+          <p>
+            "Discover. Participate. Experience." — The centralized college event discovery platform designed for campus vibrancy and student engagement.
+          </p>
+          <div class="footer-social-links">
+            <a href="https://instagram.com" target="_blank" rel="noopener noreferrer" class="social-icon-btn" aria-label="Instagram">📸</a>
+            <a href="https://facebook.com" target="_blank" rel="noopener noreferrer" class="social-icon-btn" aria-label="Facebook">📘</a>
+            <a href="https://linkedin.com" target="_blank" rel="noopener noreferrer" class="social-icon-btn" aria-label="LinkedIn">💼</a>
+            <a href="https://twitter.com" target="_blank" rel="noopener noreferrer" class="social-icon-btn" aria-label="X Twitter">🐦</a>
+          </div>
+        </div>
+
+        <div>
+          <h4 class="footer-heading">Navigation</h4>
+          <ul class="footer-nav">
+            <li><a href="index.html" class="footer-link">Home</a></li>
+            <li><a href="events.html" class="footer-link">Explore Events</a></li>
+            <li><a href="clubs.html" class="footer-link">Student Clubs</a></li>
+            <li><a href="gallery.html" class="footer-link">Campus Gallery</a></li>
+            <li><a href="about.html" class="footer-link">About CampusVibe</a></li>
+          </ul>
+        </div>
+
+        <div>
+          <h4 class="footer-heading">Categories</h4>
+          <ul class="footer-nav">
+            <li><a href="events.html?category=Technical" class="footer-link">Technical & Coding</a></li>
+            <li><a href="events.html?category=Cultural" class="footer-link">Cultural & Music</a></li>
+            <li><a href="events.html?category=Sports" class="footer-link">Athletics & Tournaments</a></li>
+            <li><a href="events.html?category=Workshops" class="footer-link">Hands-on Workshops</a></li>
+            <li><a href="events.html?category=Competitions" class="footer-link">Contests & Debates</a></li>
+          </ul>
+        </div>
+
+        <div>
+          <h4 class="footer-heading">Contact & Help</h4>
+          <ul class="footer-nav">
+            <li style="color: var(--text-secondary); font-size: 0.92rem;">✉️ campusvibe@example.com</li>
+            <li style="color: var(--text-secondary); font-size: 0.92rem;">📍 Student Activity Center, Block B</li>
+            <li style="color: var(--text-secondary); font-size: 0.92rem;">🕒 Mon–Fri: 9:00 AM – 5:00 PM</li>
+            <li style="margin-top: 0.75rem;">
+              <a href="register.html" class="btn btn-outline btn-sm" style="width: 100%;">Online Registration &rarr;</a>
+            </li>
+          </ul>
+        </div>
+      </div>
+
+      <div class="footer-bottom">
+        <div>&copy; 2026 CampusVibe. All rights reserved. (Fictional College Event Portal)</div>
+        <div style="display: flex; gap: 1.5rem;">
+          <a href="about.html" class="footer-link">Privacy Policy</a>
+          <a href="about.html" class="footer-link">Terms of Service</a>
+          <a href="about.html" class="footer-link">Code of Conduct</a>
+        </div>
+      </div>
+    </div>
+  </footer>
+
+  <!-- Scripts -->
+  <script src="js/data.js"></script>
+  <script src="js/script.js"></script>
+</body>
+</html>

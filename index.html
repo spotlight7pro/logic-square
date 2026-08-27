@@ -1,0 +1,577 @@
+<!DOCTYPE html>
+<html lang="en" data-theme="light">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <meta name="description" content="CampusVibe - Discover, participate, and experience exciting college events, hackathons, cultural festivals, sports tournaments, and workshops." />
+  <title>CampusVibe | Discover. Participate. Experience.</title>
+  
+  <!-- CSS Stylesheet -->
+  <link rel="stylesheet" href="css/style.css" />
+</head>
+<body>
+
+  <!-- Site Header & Global Navigation -->
+  <header class="site-header">
+    <div class="container">
+      <nav class="navbar" aria-label="Main Navigation">
+        <!-- Logo -->
+        <a href="index.html" class="brand-logo">
+          <div class="brand-icon">⚡</div>
+          <div>
+            CampusVibe
+            <span class="brand-tagline-sub">College Event Hub</span>
+          </div>
+        </a>
+
+        <!-- Desktop Navigation Links -->
+        <ul class="nav-links">
+          <li><a href="index.html" class="nav-link active">Home</a></li>
+          <li><a href="events.html" class="nav-link">Events</a></li>
+          <li><a href="clubs.html" class="nav-link">Clubs</a></li>
+          <li><a href="gallery.html" class="nav-link">Gallery</a></li>
+          <li><a href="about.html" class="nav-link">About</a></li>
+        </ul>
+
+        <!-- Right Actions -->
+        <div class="nav-actions">
+          <!-- Search Trigger -->
+          <button type="button" class="icon-btn search-modal-trigger" title="Search events (Ctrl+K)" aria-label="Search Events">
+            🔍
+          </button>
+
+          <!-- Dark Mode Toggle -->
+          <button type="button" class="icon-btn theme-toggle-btn" title="Toggle Theme" aria-label="Toggle Theme">
+            <span class="theme-icon">🌙</span>
+          </button>
+
+          <!-- Explore Events CTA -->
+          <a href="events.html" class="btn btn-primary btn-sm">Explore Events</a>
+
+          <!-- Mobile Hamburger Toggle -->
+          <button type="button" class="hamburger-btn" aria-label="Open navigation menu" aria-expanded="false">
+            <span></span>
+            <span></span>
+            <span></span>
+          </button>
+        </div>
+      </nav>
+    </div>
+
+    <!-- Mobile Drawer Menu -->
+    <div class="mobile-drawer" aria-label="Mobile Navigation Menu">
+      <a href="index.html" class="nav-link active">🏠 Home</a>
+      <a href="events.html" class="nav-link">📅 Events</a>
+      <a href="clubs.html" class="nav-link">👥 Clubs</a>
+      <a href="gallery.html" class="nav-link">🖼️ Gallery</a>
+      <a href="about.html" class="nav-link">ℹ️ About CampusVibe</a>
+      <hr style="border: 0; border-top: 1px solid var(--border-color); margin: 0.5rem 0;" />
+      <a href="events.html" class="btn btn-primary" style="width: 100%;">Explore All Events &rarr;</a>
+    </div>
+  </header>
+
+  <!-- Live Announcements Ticker -->
+  <div class="ticker-bar" aria-label="Campus Announcements">
+    <div class="container ticker-content">
+      <span class="ticker-label">📢 Campus Updates</span>
+      <div class="ticker-slider">
+        <div id="announcement-ticker">
+          <span class="ticker-item">Loading campus announcements...</span>
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <main>
+    <!-- 1. Hero Section -->
+    <section class="hero-section">
+      <div class="hero-bg-glow hero-glow-1"></div>
+      <div class="hero-bg-glow hero-glow-2"></div>
+
+      <div class="container hero-grid">
+        <div class="hero-content">
+          <div class="hero-badge">
+            <span class="pulse-dot"></span>
+            Campus Season 2026 is Live
+          </div>
+          <h1 class="hero-title">
+            Discover What's <span class="text-gradient">Happening</span> on Campus.
+          </h1>
+          <p class="hero-description">
+            Find exciting college events, competitions, workshops, festivals and activities — all in one centralized discovery platform.
+          </p>
+          <div class="hero-actions">
+            <a href="events.html" class="btn btn-primary btn-lg">Explore Events &rarr;</a>
+            <a href="gallery.html" class="btn btn-secondary btn-lg">View Gallery 📸</a>
+          </div>
+
+          <!-- Quick Stats Highlights -->
+          <div style="display: flex; gap: 2rem; border-top: 1px solid var(--border-color); padding-top: 1.5rem; width: 100%;">
+            <div>
+              <strong style="font-size: 1.4rem; color: var(--text-primary); display: block;">50+</strong>
+              <span style="font-size: 0.8rem; color: var(--text-muted); text-transform: uppercase;">Campus Events</span>
+            </div>
+            <div>
+              <strong style="font-size: 1.4rem; color: var(--text-primary); display: block;">1,000+</strong>
+              <span style="font-size: 0.8rem; color: var(--text-muted); text-transform: uppercase;">Active Students</span>
+            </div>
+            <div>
+              <strong style="font-size: 1.4rem; color: var(--text-primary); display: block;">15+</strong>
+              <span style="font-size: 0.8rem; color: var(--text-muted); text-transform: uppercase;">Student Clubs</span>
+            </div>
+          </div>
+        </div>
+
+        <!-- Floating Hero Visual Graphic -->
+        <div class="hero-visual">
+          <div class="hero-card-stack">
+            <!-- Floating Badge 1: Upcoming Event -->
+            <div class="floating-badge floating-badge-1">
+              <div class="floating-badge-icon">🚀</div>
+              <div class="floating-badge-text">
+                <strong>Hackathon 2026</strong>
+                <span>Registration Closes in 4 Days</span>
+              </div>
+            </div>
+
+            <!-- Main Central Card -->
+            <div class="hero-main-card">
+              <img src="https://images.unsplash.com/photo-1511578314322-379afb476865?auto=format&fit=crop&w=800&q=80" alt="Students engaged in college festival" class="hero-card-image" />
+              <div class="hero-card-body">
+                <div style="display: flex; justify-content: space-between; align-items: center; margin-bottom: 0.75rem;">
+                  <span class="badge badge-cultural">Euphoria Fest</span>
+                  <span class="status-badge status-warning">Almost Full</span>
+                </div>
+                <h3 style="font-size: 1.25rem; font-weight: 800; margin-bottom: 0.4rem; color: var(--text-primary);">Annual Cultural Symphony</h3>
+                <p style="font-size: 0.88rem; color: var(--text-secondary); margin-bottom: 1rem;">Experience 3 days of live music, theatrical drama, and street dance battles.</p>
+                <div style="display: flex; justify-content: space-between; align-items: center; font-size: 0.85rem; color: var(--text-muted);">
+                  <span>📍 Amphitheatre</span>
+                  <a href="event-details.html?id=cultural-fest-euphoria" class="btn btn-outline btn-sm">Details &rarr;</a>
+                </div>
+              </div>
+            </div>
+
+            <!-- Floating Badge 2: Live Participants -->
+            <div class="floating-badge floating-badge-2">
+              <div class="floating-badge-icon" style="background: rgba(16, 185, 129, 0.15); color: var(--accent-emerald);">👥</div>
+              <div class="floating-badge-text">
+                <strong>650+ Registered</strong>
+                <span>Participating this month</span>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- 2. Featured Spotlight Event Section -->
+    <section class="section featured-section">
+      <div class="container">
+        <div class="section-header">
+          <span class="section-tag">⭐ Featured Spotlight</span>
+          <h2 class="section-title">Campus Flagship Event</h2>
+          <p class="section-subtitle">Don't miss the biggest technological gathering of the academic year.</p>
+        </div>
+
+        <div class="featured-card">
+          <div class="featured-banner">
+            <img src="https://images.unsplash.com/photo-1531482615713-2afd69097998?auto=format&fit=crop&w=800&q=80" alt="TECHFEST 2026 Robotics and Technology Exhibition" />
+            <div class="featured-tag-corner">🔥 Flagship Event</div>
+          </div>
+
+          <div class="featured-content">
+            <div class="featured-meta">
+              <span class="badge badge-technical">Technical</span>
+              <span class="status-badge status-open">Registration Open</span>
+            </div>
+            
+            <h3 class="featured-title">TECHFEST 2026</h3>
+            <p class="featured-desc">
+              The premier technological symposium featuring keynote talks from industry titans, project expos, live robot wars, AI showcases, and drone obstacle racing.
+            </p>
+
+            <div class="featured-info-grid">
+              <div class="info-item">
+                <span class="info-item-icon">📅</span>
+                <div class="info-item-text">
+                  <span>Date</span>
+                  <strong>October 12, 2026</strong>
+                </div>
+              </div>
+              <div class="info-item">
+                <span class="info-item-icon">⏰</span>
+                <div class="info-item-text">
+                  <span>Timing</span>
+                  <strong>10:00 AM – 5:00 PM</strong>
+                </div>
+              </div>
+              <div class="info-item">
+                <span class="info-item-icon">📍</span>
+                <div class="info-item-text">
+                  <span>Venue</span>
+                  <strong>Computer Science Block</strong>
+                </div>
+              </div>
+              <div class="info-item">
+                <span class="info-item-icon">🏆</span>
+                <div class="info-item-text">
+                  <span>Prize Pool</span>
+                  <strong>₹27,000+</strong>
+                </div>
+              </div>
+            </div>
+
+            <div style="display: flex; gap: 1rem; flex-wrap: wrap;">
+              <a href="event-details.html?id=techfest-2026" class="btn btn-primary">
+                View Event &rarr;
+              </a>
+              <a href="register.html?event=techfest-2026" class="btn btn-secondary">
+                Register Directly
+              </a>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- 3. Upcoming Events Section (6 Sample Cards) -->
+    <section class="section">
+      <div class="container">
+        <div class="section-header">
+          <span class="section-tag">📅 What's Next</span>
+          <h2 class="section-title">Upcoming Campus Events</h2>
+          <p class="section-subtitle">Discover exciting workshops, hackathons, sports tournaments, and competitions.</p>
+        </div>
+
+        <div class="events-grid" id="homepage-upcoming-events">
+          <!-- Populated by data store or semantic HTML fallback -->
+          <!-- Card 1: Hackathon 2026 -->
+          <article class="event-card">
+            <div class="event-card-media">
+              <img src="https://images.unsplash.com/photo-1504384308090-c894fdcc538d?auto=format&fit=crop&w=800&q=80" alt="Hackathon 2026" />
+              <span class="badge badge-technical event-card-category">Technical</span>
+              <span class="status-badge status-open event-card-status">Registration Open</span>
+            </div>
+            <div class="event-card-body">
+              <h3 class="event-card-title">Hackathon 2026</h3>
+              <p class="event-card-desc">A 24-hour sprint to build innovative software solutions tackling real-world sustainability and campus challenges.</p>
+              <div class="event-card-meta">
+                <div class="meta-row">
+                  <span class="meta-row-icon">📅</span>
+                  <span><strong>October 12, 2026</strong> &bull; 10:00 AM</span>
+                </div>
+                <div class="meta-row">
+                  <span class="meta-row-icon">📍</span>
+                  <span>Computer Science Block, Innovation Lab</span>
+                </div>
+              </div>
+              <div class="event-card-footer">
+                <span style="font-size: 0.85rem; color: var(--text-muted);">👥 2–4 Members</span>
+                <a href="event-details.html?id=hackathon-2026" class="btn btn-outline btn-sm">View Details &rarr;</a>
+              </div>
+            </div>
+          </article>
+
+          <!-- Card 2: Cultural Fest -->
+          <article class="event-card">
+            <div class="event-card-media">
+              <img src="https://images.unsplash.com/photo-1514525253161-7a46d19cd819?auto=format&fit=crop&w=800&q=80" alt="Euphoria Cultural Fest" />
+              <span class="badge badge-cultural event-card-category">Cultural</span>
+              <span class="status-badge status-warning event-card-status">Almost Full</span>
+            </div>
+            <div class="event-card-body">
+              <h3 class="event-card-title">Euphoria Cultural Fest</h3>
+              <p class="event-card-desc">A vibrant evening celebrating music, classical & western dance, theatrical drama, and fashion runway.</p>
+              <div class="event-card-meta">
+                <div class="meta-row">
+                  <span class="meta-row-icon">📅</span>
+                  <span><strong>October 18, 2026</strong> &bull; 4:00 PM</span>
+                </div>
+                <div class="meta-row">
+                  <span class="meta-row-icon">📍</span>
+                  <span>University Amphitheatre</span>
+                </div>
+              </div>
+              <div class="event-card-footer">
+                <span style="font-size: 0.85rem; color: var(--text-muted);">👥 Solo to 12</span>
+                <a href="event-details.html?id=cultural-fest-euphoria" class="btn btn-outline btn-sm">View Details &rarr;</a>
+              </div>
+            </div>
+          </article>
+
+          <!-- Card 3: Football Tournament -->
+          <article class="event-card">
+            <div class="event-card-media">
+              <img src="https://images.unsplash.com/photo-1579952363873-27f3bade9f55?auto=format&fit=crop&w=800&q=80" alt="Inter-College Football Tournament" />
+              <span class="badge badge-sports event-card-category">Sports</span>
+              <span class="status-badge status-open event-card-status">Registration Open</span>
+            </div>
+            <div class="event-card-body">
+              <h3 class="event-card-title">Inter-College Football Tournament</h3>
+              <p class="event-card-desc">High-octane knockout football championship featuring top college squads competing for the Campus Cup.</p>
+              <div class="event-card-meta">
+                <div class="meta-row">
+                  <span class="meta-row-icon">📅</span>
+                  <span><strong>October 24, 2026</strong> &bull; 8:00 AM</span>
+                </div>
+                <div class="meta-row">
+                  <span class="meta-row-icon">📍</span>
+                  <span>Campus Sports Complex Stadium</span>
+                </div>
+              </div>
+              <div class="event-card-footer">
+                <span style="font-size: 0.85rem; color: var(--text-muted);">👥 11 Players</span>
+                <a href="event-details.html?id=football-tournament" class="btn btn-outline btn-sm">View Details &rarr;</a>
+              </div>
+            </div>
+          </article>
+
+          <!-- Card 4: Web Development Workshop -->
+          <article class="event-card">
+            <div class="event-card-media">
+              <img src="https://images.unsplash.com/photo-1517694712202-14dd9538aa97?auto=format&fit=crop&w=800&q=80" alt="Web Development Workshop" />
+              <span class="badge badge-workshops event-card-category">Workshops</span>
+              <span class="status-badge status-warning event-card-status">Almost Full</span>
+            </div>
+            <div class="event-card-body">
+              <h3 class="event-card-title">Web Development Workshop</h3>
+              <p class="event-card-desc">Hands-on masterclass mastering modern CSS Grid, Flexbox, responsive layouts, and modern JavaScript APIs.</p>
+              <div class="event-card-meta">
+                <div class="meta-row">
+                  <span class="meta-row-icon">📅</span>
+                  <span><strong>October 28, 2026</strong> &bull; 11:00 AM</span>
+                </div>
+                <div class="meta-row">
+                  <span class="meta-row-icon">📍</span>
+                  <span>Seminar Hall 2, IT Dept</span>
+                </div>
+              </div>
+              <div class="event-card-footer">
+                <span style="font-size: 0.85rem; color: var(--text-muted);">👥 Individual</span>
+                <a href="event-details.html?id=web-dev-workshop" class="btn btn-outline btn-sm">View Details &rarr;</a>
+              </div>
+            </div>
+          </article>
+
+          <!-- Card 5: Photography Competition -->
+          <article class="event-card">
+            <div class="event-card-media">
+              <img src="https://images.unsplash.com/photo-1516035069371-29a1b244cc32?auto=format&fit=crop&w=800&q=80" alt="LensCraft Photography Competition" />
+              <span class="badge badge-competitions event-card-category">Competitions</span>
+              <span class="status-badge status-open event-card-status">Registration Open</span>
+            </div>
+            <div class="event-card-body">
+              <h3 class="event-card-title">Photography Competition</h3>
+              <p class="event-card-desc">Capture the essence of campus life, architectural shadows, and raw human emotions through your lens.</p>
+              <div class="event-card-meta">
+                <div class="meta-row">
+                  <span class="meta-row-icon">📅</span>
+                  <span><strong>November 04, 2026</strong> &bull; 9:00 AM</span>
+                </div>
+                <div class="meta-row">
+                  <span class="meta-row-icon">📍</span>
+                  <span>Central Library Gallery</span>
+                </div>
+              </div>
+              <div class="event-card-footer">
+                <span style="font-size: 0.85rem; color: var(--text-muted);">👥 Solo</span>
+                <a href="event-details.html?id=photography-competition" class="btn btn-outline btn-sm">View Details &rarr;</a>
+              </div>
+            </div>
+          </article>
+
+          <!-- Card 6: Coding Challenge -->
+          <article class="event-card">
+            <div class="event-card-media">
+              <img src="https://images.unsplash.com/photo-1526374965328-7f61d4dc18c5?auto=format&fit=crop&w=800&q=80" alt="Coding Challenge" />
+              <span class="badge badge-technical event-card-category">Technical</span>
+              <span class="status-badge status-open event-card-status">Registration Open</span>
+            </div>
+            <div class="event-card-body">
+              <h3 class="event-card-title">Coding Challenge</h3>
+              <p class="event-card-desc">Fast-paced algorithmic duel testing data structures, rapid debugging, and algorithmic efficiency under the clock.</p>
+              <div class="event-card-meta">
+                <div class="meta-row">
+                  <span class="meta-row-icon">📅</span>
+                  <span><strong>November 10, 2026</strong> &bull; 2:00 PM</span>
+                </div>
+                <div class="meta-row">
+                  <span class="meta-row-icon">📍</span>
+                  <span>Computer Lab 4</span>
+                </div>
+              </div>
+              <div class="event-card-footer">
+                <span style="font-size: 0.85rem; color: var(--text-muted);">👥 Solo</span>
+                <a href="event-details.html?id=coding-challenge" class="btn btn-outline btn-sm">View Details &rarr;</a>
+              </div>
+            </div>
+          </article>
+        </div>
+
+        <div style="text-align: center; margin-top: 3.5rem;">
+          <a href="events.html" class="btn btn-secondary btn-lg">
+            View All 10+ Events &rarr;
+          </a>
+        </div>
+      </div>
+    </section>
+
+    <!-- 4. Why Participate? Feature Blocks -->
+    <section class="section" style="background: var(--bg-surface); border-top: 1px solid var(--border-color); border-bottom: 1px solid var(--border-color);">
+      <div class="container">
+        <div class="section-header">
+          <span class="section-tag">🌟 Student Opportunities</span>
+          <h2 class="section-title">Why Participate?</h2>
+          <p class="section-subtitle">Make the most of your college experience through extracurricular excellence.</p>
+        </div>
+
+        <div class="features-grid">
+          <!-- Block 1: Competitions -->
+          <div class="feature-card">
+            <div class="feature-icon-wrapper">🎤</div>
+            <h3 class="feature-title">Competitions</h3>
+            <p class="feature-desc">
+              Participate in exciting competitions, hackathons, debates, and showcase your skills to win prestigious prizes and recognition.
+            </p>
+          </div>
+
+          <!-- Block 2: Workshops -->
+          <div class="feature-card">
+            <div class="feature-icon-wrapper">💻</div>
+            <h3 class="feature-title">Workshops</h3>
+            <p class="feature-desc">
+              Learn practical hands-on skills from industry-experienced speakers, mentors, and senior student leaders.
+            </p>
+          </div>
+
+          <!-- Block 3: Cultural Events -->
+          <div class="feature-card">
+            <div class="feature-icon-wrapper">🎨</div>
+            <h3 class="feature-title">Cultural Events</h3>
+            <p class="feature-desc">
+              Experience music, dance, theatre, fine arts, and vibrant campus culture that create lifelong memories.
+            </p>
+          </div>
+
+          <!-- Block 4: Sports -->
+          <div class="feature-card">
+            <div class="feature-icon-wrapper">🏆</div>
+            <h3 class="feature-title">Sports</h3>
+            <p class="feature-desc">
+              Take part in competitive tournaments, stay physically active, build teamwork, and represent your department with pride.
+            </p>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- 5. Call To Action (CTA) -->
+    <section class="cta-section">
+      <div class="container">
+        <div class="cta-box">
+          <h2 class="cta-title">Your next campus experience is waiting.</h2>
+          <p class="cta-subtitle">
+            Explore hundreds of students collaborating, competing, and celebrating across various departments and clubs.
+          </p>
+          <a href="events.html" class="btn cta-btn">
+            Explore All Events &rarr;
+          </a>
+        </div>
+      </div>
+    </section>
+  </main>
+
+  <!-- Global Quick-Search Modal -->
+  <div id="global-search-modal" class="search-modal-backdrop" role="dialog" aria-modal="true" aria-label="Quick Search Events">
+    <div class="search-modal-box">
+      <div class="search-modal-header">
+        <span style="position: absolute; left: 1.25rem; top: 50%; transform: translateY(-50%); font-size: 1.1rem; color: var(--text-muted);">🔍</span>
+        <input type="text" id="global-search-input" class="search-modal-input" placeholder="Type event name, category, or venue..." />
+        <button type="button" id="global-search-close" class="modal-close-btn" style="top: 0.75rem; right: 0.75rem;" aria-label="Close search">✕</button>
+      </div>
+      <div id="global-search-results" class="search-modal-results">
+        <!-- Live search matches -->
+      </div>
+      <div style="padding: 0.75rem 1.25rem; background: var(--bg-surface-elevated); border-top: 1px solid var(--border-color); font-size: 0.78rem; color: var(--text-muted); display: flex; justify-content: space-between;">
+        <span>Press <strong>ESC</strong> to dismiss</span>
+        <span>CampusVibe Event Discovery</span>
+      </div>
+    </div>
+  </div>
+
+  <!-- Professional Footer -->
+  <footer class="site-footer">
+    <div class="container">
+      <div class="footer-grid">
+        <!-- Brand Info -->
+        <div class="footer-brand">
+          <a href="index.html" class="brand-logo">
+            <div class="brand-icon">⚡</div>
+            CampusVibe
+          </a>
+          <p>
+            "Discover. Participate. Experience." — The centralized college event discovery platform designed for campus vibrancy and student engagement.
+          </p>
+          <div class="footer-social-links">
+            <a href="https://instagram.com" target="_blank" rel="noopener noreferrer" class="social-icon-btn" aria-label="Instagram">📸</a>
+            <a href="https://facebook.com" target="_blank" rel="noopener noreferrer" class="social-icon-btn" aria-label="Facebook">📘</a>
+            <a href="https://linkedin.com" target="_blank" rel="noopener noreferrer" class="social-icon-btn" aria-label="LinkedIn">💼</a>
+            <a href="https://twitter.com" target="_blank" rel="noopener noreferrer" class="social-icon-btn" aria-label="X Twitter">🐦</a>
+          </div>
+        </div>
+
+        <!-- Quick Navigation -->
+        <div>
+          <h4 class="footer-heading">Navigation</h4>
+          <ul class="footer-nav">
+            <li><a href="index.html" class="footer-link">Home</a></li>
+            <li><a href="events.html" class="footer-link">Explore Events</a></li>
+            <li><a href="clubs.html" class="footer-link">Student Clubs</a></li>
+            <li><a href="gallery.html" class="footer-link">Campus Gallery</a></li>
+            <li><a href="about.html" class="footer-link">About CampusVibe</a></li>
+          </ul>
+        </div>
+
+        <!-- Event Categories -->
+        <div>
+          <h4 class="footer-heading">Categories</h4>
+          <ul class="footer-nav">
+            <li><a href="events.html?category=Technical" class="footer-link">Technical & Coding</a></li>
+            <li><a href="events.html?category=Cultural" class="footer-link">Cultural & Music</a></li>
+            <li><a href="events.html?category=Sports" class="footer-link">Athletics & Tournaments</a></li>
+            <li><a href="events.html?category=Workshops" class="footer-link">Hands-on Workshops</a></li>
+            <li><a href="events.html?category=Competitions" class="footer-link">Contests & Debates</a></li>
+          </ul>
+        </div>
+
+        <!-- Contact & Support -->
+        <div>
+          <h4 class="footer-heading">Contact & Help</h4>
+          <ul class="footer-nav">
+            <li style="color: var(--text-secondary); font-size: 0.92rem;">✉️ campusvibe@example.com</li>
+            <li style="color: var(--text-secondary); font-size: 0.92rem;">📍 Student Activity Center, Block B</li>
+            <li style="color: var(--text-secondary); font-size: 0.92rem;">🕒 Mon–Fri: 9:00 AM – 5:00 PM</li>
+            <li style="margin-top: 0.75rem;">
+              <a href="register.html" class="btn btn-outline btn-sm" style="width: 100%;">Online Registration &rarr;</a>
+            </li>
+          </ul>
+        </div>
+      </div>
+
+      <!-- Footer Bottom -->
+      <div class="footer-bottom">
+        <div>&copy; 2026 CampusVibe. All rights reserved. (Fictional College Event Portal)</div>
+        <div style="display: flex; gap: 1.5rem;">
+          <a href="about.html" class="footer-link">Privacy Policy</a>
+          <a href="about.html" class="footer-link">Terms of Service</a>
+          <a href="about.html" class="footer-link">Code of Conduct</a>
+        </div>
+      </div>
+    </div>
+  </footer>
+
+  <!-- Scripts -->
+  <script src="js/data.js"></script>
+  <script src="js/script.js"></script>
+</body>
+</html>

@@ -1,0 +1,380 @@
+<!DOCTYPE html>
+<html lang="en" data-theme="light">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <meta name="description" content="Register online for upcoming hackathons, sports tournaments, workshops, and cultural events at CampusVibe." />
+  <title>Event Registration | CampusVibe</title>
+  
+  <!-- CSS Stylesheet -->
+  <link rel="stylesheet" href="css/style.css" />
+</head>
+<body>
+
+  <!-- Site Header & Global Navigation -->
+  <header class="site-header">
+    <div class="container">
+      <nav class="navbar" aria-label="Main Navigation">
+        <!-- Logo -->
+        <a href="index.html" class="brand-logo">
+          <div class="brand-icon">⚡</div>
+          <div>
+            CampusVibe
+            <span class="brand-tagline-sub">College Event Hub</span>
+          </div>
+        </a>
+
+        <!-- Desktop Navigation Links -->
+        <ul class="nav-links">
+          <li><a href="index.html" class="nav-link">Home</a></li>
+          <li><a href="events.html" class="nav-link">Events</a></li>
+          <li><a href="clubs.html" class="nav-link">Clubs</a></li>
+          <li><a href="gallery.html" class="nav-link">Gallery</a></li>
+          <li><a href="about.html" class="nav-link">About</a></li>
+        </ul>
+
+        <!-- Right Actions -->
+        <div class="nav-actions">
+          <!-- Search Trigger -->
+          <button type="button" class="icon-btn search-modal-trigger" title="Search events (Ctrl+K)" aria-label="Search Events">
+            🔍
+          </button>
+
+          <!-- Dark Mode Toggle -->
+          <button type="button" class="icon-btn theme-toggle-btn" title="Toggle Theme" aria-label="Toggle Theme">
+            <span class="theme-icon">🌙</span>
+          </button>
+
+          <!-- Explore Events CTA -->
+          <a href="events.html" class="btn btn-secondary btn-sm">Explore Events</a>
+
+          <!-- Mobile Hamburger Toggle -->
+          <button type="button" class="hamburger-btn" aria-label="Open navigation menu" aria-expanded="false">
+            <span></span>
+            <span></span>
+            <span></span>
+          </button>
+        </div>
+      </nav>
+    </div>
+
+    <!-- Mobile Drawer Menu -->
+    <div class="mobile-drawer" aria-label="Mobile Navigation Menu">
+      <a href="index.html" class="nav-link">🏠 Home</a>
+      <a href="events.html" class="nav-link">📅 Events</a>
+      <a href="clubs.html" class="nav-link">👥 Clubs</a>
+      <a href="gallery.html" class="nav-link">🖼️ Gallery</a>
+      <a href="about.html" class="nav-link">ℹ️ About CampusVibe</a>
+      <hr style="border: 0; border-top: 1px solid var(--border-color); margin: 0.5rem 0;" />
+      <a href="events.html" class="btn btn-primary" style="width: 100%;">Explore All Events &rarr;</a>
+    </div>
+  </header>
+
+  <main>
+    <!-- Registration Header -->
+    <section class="section" style="padding-top: 3.5rem; padding-bottom: 2rem; background: var(--brand-gradient-subtle); border-bottom: 1px solid var(--border-color);">
+      <div class="container">
+        <div class="section-header" style="margin-bottom: 0;">
+          <span class="section-tag">📝 Online Portal</span>
+          <h1 class="section-title">Event Registration</h1>
+          <p class="section-subtitle">
+            Fill out the form below to register yourself or your team for upcoming campus events and competitions.
+          </p>
+        </div>
+      </div>
+    </section>
+
+    <!-- Registration Form Section -->
+    <section class="section" style="padding-top: 3rem;">
+      <div class="container register-container">
+        <div class="form-card">
+          <form id="event-registration-form" novalidate>
+            <div class="form-grid">
+              
+              <!-- 1. Event Selection (Full Width) -->
+              <div class="form-group form-grid-full">
+                <label for="reg-event" class="form-label">
+                  Select Event <span class="required-star">*</span>
+                </label>
+                <select id="reg-event" class="form-control" required>
+                  <option value="">-- Choose an Event --</option>
+                  <!-- Dynamically populated -->
+                </select>
+                <span class="form-error-msg">Please select an event.</span>
+              </div>
+
+              <!-- 2. Full Name -->
+              <div class="form-group">
+                <label for="reg-name" class="form-label">
+                  Full Name (Team Leader / Solo) <span class="required-star">*</span>
+                </label>
+                <input 
+                  type="text" 
+                  id="reg-name" 
+                  class="form-control" 
+                  placeholder="e.g. Ananya Sharma" 
+                  required 
+                  minlength="2"
+                />
+                <span class="form-error-msg">Please enter your full name (minimum 2 characters).</span>
+              </div>
+
+              <!-- 3. College Email -->
+              <div class="form-group">
+                <label for="reg-email" class="form-label">
+                  College Email Address <span class="required-star">*</span>
+                </label>
+                <input 
+                  type="email" 
+                  id="reg-email" 
+                  class="form-control" 
+                  placeholder="e.g. ananya@college.edu" 
+                  required 
+                />
+                <span class="form-error-msg">Please provide a valid email address.</span>
+              </div>
+
+              <!-- 4. Phone Number -->
+              <div class="form-group">
+                <label for="reg-phone" class="form-label">
+                  Phone Number <span class="required-star">*</span>
+                </label>
+                <input 
+                  type="tel" 
+                  id="reg-phone" 
+                  class="form-control" 
+                  placeholder="e.g. 9876543210" 
+                  required 
+                />
+                <span class="form-error-msg">Please enter a valid 10-digit phone number.</span>
+              </div>
+
+              <!-- 5. Department -->
+              <div class="form-group">
+                <label for="reg-dept" class="form-label">
+                  Department / Branch <span class="required-star">*</span>
+                </label>
+                <select id="reg-dept" class="form-control" required>
+                  <option value="">-- Select Department --</option>
+                  <option value="Computer Science">Computer Science & Engineering</option>
+                  <option value="Information Technology">Information Technology</option>
+                  <option value="Electronics">Electronics & Communication</option>
+                  <option value="Mechanical">Mechanical Engineering</option>
+                  <option value="Civil">Civil Engineering</option>
+                  <option value="Management">Business & Management</option>
+                  <option value="Sciences">Science & Humanities</option>
+                  <option value="Other">Other Department</option>
+                </select>
+                <span class="form-error-msg">Please choose your department.</span>
+              </div>
+
+              <!-- 6. Academic Year -->
+              <div class="form-group">
+                <label for="reg-year" class="form-label">
+                  Current Academic Year <span class="required-star">*</span>
+                </label>
+                <select id="reg-year" class="form-control" required>
+                  <option value="">-- Select Year --</option>
+                  <option value="1st Year">1st Year (Freshman)</option>
+                  <option value="2nd Year">2nd Year (Sophomore)</option>
+                  <option value="3rd Year">3rd Year (Junior)</option>
+                  <option value="4th Year">4th Year (Senior)</option>
+                  <option value="Postgraduate">Postgraduate / Masters</option>
+                </select>
+                <span class="form-error-msg">Please select your year.</span>
+              </div>
+
+              <!-- 7. Team Size Dropdown -->
+              <div class="form-group">
+                <label for="reg-team-size" class="form-label">
+                  Participation Mode / Team Size <span class="required-star">*</span>
+                </label>
+                <select id="reg-team-size" class="form-control" required>
+                  <option value="1">Solo / Individual (1 Person)</option>
+                  <option value="2">Duo Team (2 Members)</option>
+                  <option value="3">Trio Team (3 Members)</option>
+                  <option value="4">Quad Squad (4 Members)</option>
+                </select>
+              </div>
+
+              <!-- 8. Team Name (Hidden if solo, required if team) -->
+              <div class="form-group form-grid-full" style="display: none;">
+                <label for="reg-team-name" class="form-label">
+                  Team / Squad Name <span class="required-star">*</span>
+                </label>
+                <input 
+                  type="text" 
+                  id="reg-team-name" 
+                  class="form-control" 
+                  placeholder="e.g. ByteBusters" 
+                />
+                <span class="form-error-msg">Please provide your team name.</span>
+              </div>
+
+              <!-- 9. Dynamic Team Member Inputs Container (Injected by JS) -->
+              <div id="dynamic-team-members" class="form-grid-full team-members-box" style="display: none;">
+                <!-- Generated by JS when team size > 1 -->
+              </div>
+
+              <!-- 10. Agree to Rules Checkbox -->
+              <div class="form-grid-full" style="display: flex; align-items: flex-start; gap: 0.75rem; margin-top: 0.5rem;">
+                <input type="checkbox" id="reg-agree" required style="margin-top: 0.25rem; width: 18px; height: 18px; cursor: pointer;" />
+                <label for="reg-agree" style="font-size: 0.88rem; color: var(--text-secondary); cursor: pointer;">
+                  I agree to abide by the event rules, campus code of conduct, and confirm that all submitted details are accurate.
+                </label>
+              </div>
+
+              <!-- Submit Button -->
+              <div class="form-grid-full" style="margin-top: 1rem;">
+                <button type="submit" class="btn btn-primary btn-lg" style="width: 100%;">
+                  Complete Registration &rarr;
+                </button>
+              </div>
+
+            </div>
+          </form>
+        </div>
+      </div>
+    </section>
+  </main>
+
+  <!-- Registration Success Receipt Modal -->
+  <div id="registration-success-modal" class="modal-backdrop" role="dialog" aria-modal="true" aria-label="Registration Successful Receipt">
+    <div class="modal-card">
+      <button type="button" id="modal-close-btn" class="modal-close-btn" aria-label="Close modal">✕</button>
+      
+      <div class="success-icon-badge">✓</div>
+      <h3 style="font-size: 1.6rem; font-weight: 800; color: var(--text-primary); margin-bottom: 0.5rem;">Registration Successful!</h3>
+      <p style="color: var(--text-secondary); font-size: 0.95rem;">
+        Your event registration pass has been confirmed and saved to your browser session.
+      </p>
+
+      <!-- Printable Receipt Summary Box -->
+      <div class="receipt-box">
+        <div class="receipt-row">
+          <span class="receipt-label">Pass ID:</span>
+          <span id="receipt-reg-id" class="receipt-val" style="color: var(--brand-primary); font-family: monospace; font-size: 1rem;">REG-12345</span>
+        </div>
+        <div class="receipt-row">
+          <span class="receipt-label">Event:</span>
+          <span id="receipt-event" class="receipt-val">Hackathon 2026</span>
+        </div>
+        <div class="receipt-row">
+          <span class="receipt-label">Participant:</span>
+          <span id="receipt-lead" class="receipt-val">Ananya Sharma</span>
+        </div>
+        <div class="receipt-row">
+          <span class="receipt-label">Dept & Year:</span>
+          <span id="receipt-dept-year" class="receipt-val">Computer Science • 3rd Year</span>
+        </div>
+        <div class="receipt-row">
+          <span class="receipt-label">Date & Venue:</span>
+          <span id="receipt-venue-date" class="receipt-val">October 12, 2026 | Lab A</span>
+        </div>
+        <div class="receipt-row">
+          <span class="receipt-label">Participation:</span>
+          <span id="receipt-team" class="receipt-val">ByteBusters (3 Members)</span>
+        </div>
+      </div>
+
+      <div style="display: flex; gap: 1rem; justify-content: center; flex-wrap: wrap;">
+        <button type="button" id="print-receipt-btn" class="btn btn-secondary">
+          🖨️ Print / Save Pass
+        </button>
+        <button type="button" id="modal-ok-btn" class="btn btn-primary">
+          Done & Explore More
+        </button>
+      </div>
+    </div>
+  </div>
+
+  <!-- Global Quick-Search Modal -->
+  <div id="global-search-modal" class="search-modal-backdrop" role="dialog" aria-modal="true" aria-label="Quick Search Events">
+    <div class="search-modal-box">
+      <div class="search-modal-header">
+        <span style="position: absolute; left: 1.25rem; top: 50%; transform: translateY(-50%); font-size: 1.1rem; color: var(--text-muted);">🔍</span>
+        <input type="text" id="global-search-input" class="search-modal-input" placeholder="Type event name, category, or venue..." />
+        <button type="button" id="global-search-close" class="modal-close-btn" style="top: 0.75rem; right: 0.75rem;" aria-label="Close search">✕</button>
+      </div>
+      <div id="global-search-results" class="search-modal-results">
+        <!-- Live search matches -->
+      </div>
+      <div style="padding: 0.75rem 1.25rem; background: var(--bg-surface-elevated); border-top: 1px solid var(--border-color); font-size: 0.78rem; color: var(--text-muted); display: flex; justify-content: space-between;">
+        <span>Press <strong>ESC</strong> to dismiss</span>
+        <span>CampusVibe Event Discovery</span>
+      </div>
+    </div>
+  </div>
+
+  <!-- Professional Footer -->
+  <footer class="site-footer">
+    <div class="container">
+      <div class="footer-grid">
+        <div class="footer-brand">
+          <a href="index.html" class="brand-logo">
+            <div class="brand-icon">⚡</div>
+            CampusVibe
+          </a>
+          <p>
+            "Discover. Participate. Experience." — The centralized college event discovery platform designed for campus vibrancy and student engagement.
+          </p>
+          <div class="footer-social-links">
+            <a href="https://instagram.com" target="_blank" rel="noopener noreferrer" class="social-icon-btn" aria-label="Instagram">📸</a>
+            <a href="https://facebook.com" target="_blank" rel="noopener noreferrer" class="social-icon-btn" aria-label="Facebook">📘</a>
+            <a href="https://linkedin.com" target="_blank" rel="noopener noreferrer" class="social-icon-btn" aria-label="LinkedIn">💼</a>
+            <a href="https://twitter.com" target="_blank" rel="noopener noreferrer" class="social-icon-btn" aria-label="X Twitter">🐦</a>
+          </div>
+        </div>
+
+        <div>
+          <h4 class="footer-heading">Navigation</h4>
+          <ul class="footer-nav">
+            <li><a href="index.html" class="footer-link">Home</a></li>
+            <li><a href="events.html" class="footer-link">Explore Events</a></li>
+            <li><a href="clubs.html" class="footer-link">Student Clubs</a></li>
+            <li><a href="gallery.html" class="footer-link">Campus Gallery</a></li>
+            <li><a href="about.html" class="footer-link">About CampusVibe</a></li>
+          </ul>
+        </div>
+
+        <div>
+          <h4 class="footer-heading">Categories</h4>
+          <ul class="footer-nav">
+            <li><a href="events.html?category=Technical" class="footer-link">Technical & Coding</a></li>
+            <li><a href="events.html?category=Cultural" class="footer-link">Cultural & Music</a></li>
+            <li><a href="events.html?category=Sports" class="footer-link">Athletics & Tournaments</a></li>
+            <li><a href="events.html?category=Workshops" class="footer-link">Hands-on Workshops</a></li>
+            <li><a href="events.html?category=Competitions" class="footer-link">Contests & Debates</a></li>
+          </ul>
+        </div>
+
+        <div>
+          <h4 class="footer-heading">Contact & Help</h4>
+          <ul class="footer-nav">
+            <li style="color: var(--text-secondary); font-size: 0.92rem;">✉️ campusvibe@example.com</li>
+            <li style="color: var(--text-secondary); font-size: 0.92rem;">📍 Student Activity Center, Block B</li>
+            <li style="color: var(--text-secondary); font-size: 0.92rem;">🕒 Mon–Fri: 9:00 AM – 5:00 PM</li>
+            <li style="margin-top: 0.75rem;">
+              <a href="register.html" class="btn btn-outline btn-sm" style="width: 100%;">Online Registration &rarr;</a>
+            </li>
+          </ul>
+        </div>
+      </div>
+
+      <div class="footer-bottom">
+        <div>&copy; 2026 CampusVibe. All rights reserved. (Fictional College Event Portal)</div>
+        <div style="display: flex; gap: 1.5rem;">
+          <a href="about.html" class="footer-link">Privacy Policy</a>
+          <a href="about.html" class="footer-link">Terms of Service</a>
+          <a href="about.html" class="footer-link">Code of Conduct</a>
+        </div>
+      </div>
+    </div>
+  </footer>
+
+  <!-- Scripts -->
+  <script src="js/data.js"></script>
+  <script src="js/script.js"></script>
+  <script src="js/registration.js"></script>
+</body>
+</html>

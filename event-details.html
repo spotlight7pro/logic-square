@@ -1,0 +1,368 @@
+<!DOCTYPE html>
+<html lang="en" data-theme="light">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <meta name="description" content="View complete event information, eligibility, prizes, schedule, and live countdown for CampusVibe events." />
+  <title>Event Details | CampusVibe</title>
+  
+  <!-- CSS Stylesheet -->
+  <link rel="stylesheet" href="css/style.css" />
+</head>
+<body>
+
+  <!-- Site Header & Global Navigation -->
+  <header class="site-header">
+    <div class="container">
+      <nav class="navbar" aria-label="Main Navigation">
+        <!-- Logo -->
+        <a href="index.html" class="brand-logo">
+          <div class="brand-icon">⚡</div>
+          <div>
+            CampusVibe
+            <span class="brand-tagline-sub">College Event Hub</span>
+          </div>
+        </a>
+
+        <!-- Desktop Navigation Links -->
+        <ul class="nav-links">
+          <li><a href="index.html" class="nav-link">Home</a></li>
+          <li><a href="events.html" class="nav-link active">Events</a></li>
+          <li><a href="clubs.html" class="nav-link">Clubs</a></li>
+          <li><a href="gallery.html" class="nav-link">Gallery</a></li>
+          <li><a href="about.html" class="nav-link">About</a></li>
+        </ul>
+
+        <!-- Right Actions -->
+        <div class="nav-actions">
+          <!-- Search Trigger -->
+          <button type="button" class="icon-btn search-modal-trigger" title="Search events (Ctrl+K)" aria-label="Search Events">
+            🔍
+          </button>
+
+          <!-- Dark Mode Toggle -->
+          <button type="button" class="icon-btn theme-toggle-btn" title="Toggle Theme" aria-label="Toggle Theme">
+            <span class="theme-icon">🌙</span>
+          </button>
+
+          <!-- Register CTA -->
+          <a href="register.html" class="btn btn-primary btn-sm">Register Now</a>
+
+          <!-- Mobile Hamburger Toggle -->
+          <button type="button" class="hamburger-btn" aria-label="Open navigation menu" aria-expanded="false">
+            <span></span>
+            <span></span>
+            <span></span>
+          </button>
+        </div>
+      </nav>
+    </div>
+
+    <!-- Mobile Drawer Menu -->
+    <div class="mobile-drawer" aria-label="Mobile Navigation Menu">
+      <a href="index.html" class="nav-link">🏠 Home</a>
+      <a href="events.html" class="nav-link active">📅 Events</a>
+      <a href="clubs.html" class="nav-link">👥 Clubs</a>
+      <a href="gallery.html" class="nav-link">🖼️ Gallery</a>
+      <a href="about.html" class="nav-link">ℹ️ About CampusVibe</a>
+      <hr style="border: 0; border-top: 1px solid var(--border-color); margin: 0.5rem 0;" />
+      <a href="register.html" class="btn btn-primary" style="width: 100%;">Online Registration &rarr;</a>
+    </div>
+  </header>
+
+  <main>
+    <!-- Event Details Hero Banner -->
+    <section class="details-hero">
+      <div class="container">
+        <!-- Breadcrumb Navigation -->
+        <div class="details-breadcrumb">
+          <a href="index.html">Home</a>
+          <span>/</span>
+          <a href="events.html">Events</a>
+          <span>/</span>
+          <span id="details-breadcrumb-current" style="color: var(--text-primary); font-weight: 600;">Hackathon 2026</span>
+        </div>
+
+        <div class="details-header-grid">
+          <div>
+            <div class="details-badges">
+              <span id="details-category-badge" class="badge badge-technical">Technical</span>
+              <span id="details-status-badge" class="status-badge status-open">Registration Open</span>
+              <span id="details-club-badge" style="font-size: 0.85rem; color: var(--text-secondary); font-weight: 600;">Hosted by Coding Club</span>
+            </div>
+
+            <h1 id="details-event-title" class="details-title">Hackathon 2026</h1>
+            <p style="font-size: 1.15rem; color: var(--text-secondary); line-height: 1.6;">
+              Everything you need to know about the upcoming event, registration guidelines, rulebook, and cash prizes.
+            </p>
+          </div>
+
+          <!-- Real-time Live Countdown Timer Card -->
+          <div class="countdown-box">
+            <div class="countdown-heading">⏳ Registration & Event Countdown</div>
+            <div class="timer-grid">
+              <div class="timer-segment">
+                <div id="timer-days" class="timer-num">00</div>
+                <div class="timer-label">Days</div>
+              </div>
+              <div class="timer-segment">
+                <div id="timer-hours" class="timer-num">00</div>
+                <div class="timer-label">Hours</div>
+              </div>
+              <div class="timer-segment">
+                <div id="timer-minutes" class="timer-num">00</div>
+                <div class="timer-label">Mins</div>
+              </div>
+              <div class="timer-segment">
+                <div id="timer-seconds" class="timer-num">00</div>
+                <div class="timer-label">Secs</div>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- Main Details Layout Grid -->
+    <section class="section" style="padding-top: 3rem;">
+      <div class="container details-layout">
+        
+        <!-- Left Main Content Column -->
+        <div class="details-main-content">
+          <!-- Featured Image Banner -->
+          <div style="border-radius: var(--radius-lg); overflow: hidden; height: 360px; box-shadow: var(--shadow-md);">
+            <img id="details-hero-image" src="https://images.unsplash.com/photo-1504384308090-c894fdcc538d?auto=format&fit=crop&w=800&q=80" alt="Event preview" style="width: 100%; height: 100%; object-fit: cover;" />
+          </div>
+
+          <!-- About the Event Block -->
+          <article class="details-card-block">
+            <h2 class="details-block-title">
+              <span>📖</span> About the Event
+            </h2>
+            <p id="details-full-description" class="details-text">
+              Hackathon 2026 is CampusVibe's flagship annual coding marathon! Gather your team of developers, designers, and problem solvers to build groundbreaking web, mobile, AI, and IoT solutions over 24 thrilling hours. Enjoy mentorship from industry experts, free meals, high-speed Wi-Fi, and exclusive sponsor swag bags.
+            </p>
+          </article>
+
+          <!-- Eligibility Block -->
+          <article class="details-card-block">
+            <h2 class="details-block-title">
+              <span>🎓</span> Eligibility Criteria
+            </h2>
+            <ul id="details-eligibility-list" class="styled-list">
+              <li>Enrolled college/university students with valid ID</li>
+              <li>Open to all engineering, science, and arts departments</li>
+              <li>Basic programming knowledge recommended (any language)</li>
+              <li>Teams must have 2 to 4 registered participants</li>
+            </ul>
+          </article>
+
+          <!-- Prizes Block -->
+          <article class="details-card-block">
+            <h2 class="details-block-title">
+              <span>🏆</span> Prizes & Recognition
+            </h2>
+            <div id="details-prizes-grid" class="prizes-grid">
+              <div class="prize-card">
+                <div class="prize-rank">🥇 First Prize</div>
+                <div class="prize-amount">₹10,000</div>
+                <div class="prize-badge">Winner Trophy + Internship Opportunity</div>
+              </div>
+              <div class="prize-card">
+                <div class="prize-rank">🥈 Second Prize</div>
+                <div class="prize-amount">₹5,000</div>
+                <div class="prize-badge">Runner-Up Trophy + Certificate of Excellence</div>
+              </div>
+              <div class="prize-card">
+                <div class="prize-rank">🥉 Third Prize</div>
+                <div class="prize-amount">₹2,500</div>
+                <div class="prize-badge">Special Mention + Goodies</div>
+              </div>
+            </div>
+          </article>
+
+          <!-- Event Schedule Timeline -->
+          <article id="details-schedule-block" class="details-card-block">
+            <h2 class="details-block-title">
+              <span>⏰</span> Event Schedule & Agenda
+            </h2>
+            <div id="details-timeline" class="timeline">
+              <!-- Timeline entries injected dynamically -->
+            </div>
+          </article>
+
+          <!-- Rules Block -->
+          <article class="details-card-block">
+            <h2 class="details-block-title">
+              <span>📜</span> Rules & Guidelines
+            </h2>
+            <ul id="details-rules-list" class="styled-list">
+              <li>All code, designs, and assets must be created during the hackathon timeline.</li>
+              <li>Use of open-source libraries and public APIs is permitted and encouraged.</li>
+              <li>Plagiarism or pre-built complete projects will lead to immediate disqualification.</li>
+              <li>Every team must submit a GitHub repository link and a 3-minute video demo.</li>
+              <li>Respect fellow hackers and adhere strictly to the CampusVibe Code of Conduct.</li>
+              <li>Final presentations to the judges will take place in the Main Auditorium at 4:00 PM.</li>
+            </ul>
+          </article>
+        </div>
+
+        <!-- Right Sticky Sidebar Column -->
+        <aside class="details-sidebar">
+          <div class="sidebar-sticky-box">
+            <h3 style="font-size: 1.2rem; font-weight: 700; color: var(--text-primary); border-bottom: 1px solid var(--border-color); padding-bottom: 0.75rem;">
+              Event Quick Facts
+            </h3>
+
+            <!-- Fact 1: Date -->
+            <div class="sidebar-info-row">
+              <span class="sidebar-icon">📅</span>
+              <div>
+                <div class="sidebar-info-label">Date</div>
+                <div id="details-date" class="sidebar-info-val">October 12, 2026</div>
+              </div>
+            </div>
+
+            <!-- Fact 2: Time -->
+            <div class="sidebar-info-row">
+              <span class="sidebar-icon">⏰</span>
+              <div>
+                <div class="sidebar-info-label">Time</div>
+                <div id="details-time" class="sidebar-info-val">10:00 AM – 5:00 PM</div>
+              </div>
+            </div>
+
+            <!-- Fact 3: Venue -->
+            <div class="sidebar-info-row">
+              <span class="sidebar-icon">📍</span>
+              <div>
+                <div class="sidebar-info-label">Venue</div>
+                <div id="details-venue" class="sidebar-info-val">Computer Science Block, Innovation Lab</div>
+              </div>
+            </div>
+
+            <!-- Fact 4: Team Size -->
+            <div class="sidebar-info-row">
+              <span class="sidebar-icon">👥</span>
+              <div>
+                <div class="sidebar-info-label">Team Size</div>
+                <div id="details-teamsize" class="sidebar-info-val">2–4 Members</div>
+              </div>
+            </div>
+
+            <!-- Fact 5: Registration Deadline -->
+            <div class="sidebar-info-row">
+              <span class="sidebar-icon">⏳</span>
+              <div>
+                <div class="sidebar-info-label">Registration Deadline</div>
+                <div id="details-deadline" class="sidebar-info-val" style="color: var(--accent-rose);">October 8, 2026</div>
+              </div>
+            </div>
+
+            <!-- Prominent Register Button -->
+            <div style="margin-top: 1rem;">
+              <a id="details-register-btn" href="register.html?event=hackathon-2026" class="btn btn-primary btn-lg" style="width: 100%;">
+                Register Now 🚀
+              </a>
+            </div>
+
+            <div style="text-align: center; font-size: 0.8rem; color: var(--text-muted);">
+              Instant confirmation & team pass generation
+            </div>
+          </div>
+        </aside>
+
+      </div>
+    </section>
+  </main>
+
+  <!-- Global Quick-Search Modal -->
+  <div id="global-search-modal" class="search-modal-backdrop" role="dialog" aria-modal="true" aria-label="Quick Search Events">
+    <div class="search-modal-box">
+      <div class="search-modal-header">
+        <span style="position: absolute; left: 1.25rem; top: 50%; transform: translateY(-50%); font-size: 1.1rem; color: var(--text-muted);">🔍</span>
+        <input type="text" id="global-search-input" class="search-modal-input" placeholder="Type event name, category, or venue..." />
+        <button type="button" id="global-search-close" class="modal-close-btn" style="top: 0.75rem; right: 0.75rem;" aria-label="Close search">✕</button>
+      </div>
+      <div id="global-search-results" class="search-modal-results">
+        <!-- Live search matches -->
+      </div>
+      <div style="padding: 0.75rem 1.25rem; background: var(--bg-surface-elevated); border-top: 1px solid var(--border-color); font-size: 0.78rem; color: var(--text-muted); display: flex; justify-content: space-between;">
+        <span>Press <strong>ESC</strong> to dismiss</span>
+        <span>CampusVibe Event Discovery</span>
+      </div>
+    </div>
+  </div>
+
+  <!-- Professional Footer -->
+  <footer class="site-footer">
+    <div class="container">
+      <div class="footer-grid">
+        <div class="footer-brand">
+          <a href="index.html" class="brand-logo">
+            <div class="brand-icon">⚡</div>
+            CampusVibe
+          </a>
+          <p>
+            "Discover. Participate. Experience." — The centralized college event discovery platform designed for campus vibrancy and student engagement.
+          </p>
+          <div class="footer-social-links">
+            <a href="https://instagram.com" target="_blank" rel="noopener noreferrer" class="social-icon-btn" aria-label="Instagram">📸</a>
+            <a href="https://facebook.com" target="_blank" rel="noopener noreferrer" class="social-icon-btn" aria-label="Facebook">📘</a>
+            <a href="https://linkedin.com" target="_blank" rel="noopener noreferrer" class="social-icon-btn" aria-label="LinkedIn">💼</a>
+            <a href="https://twitter.com" target="_blank" rel="noopener noreferrer" class="social-icon-btn" aria-label="X Twitter">🐦</a>
+          </div>
+        </div>
+
+        <div>
+          <h4 class="footer-heading">Navigation</h4>
+          <ul class="footer-nav">
+            <li><a href="index.html" class="footer-link">Home</a></li>
+            <li><a href="events.html" class="footer-link">Explore Events</a></li>
+            <li><a href="clubs.html" class="footer-link">Student Clubs</a></li>
+            <li><a href="gallery.html" class="footer-link">Campus Gallery</a></li>
+            <li><a href="about.html" class="footer-link">About CampusVibe</a></li>
+          </ul>
+        </div>
+
+        <div>
+          <h4 class="footer-heading">Categories</h4>
+          <ul class="footer-nav">
+            <li><a href="events.html?category=Technical" class="footer-link">Technical & Coding</a></li>
+            <li><a href="events.html?category=Cultural" class="footer-link">Cultural & Music</a></li>
+            <li><a href="events.html?category=Sports" class="footer-link">Athletics & Tournaments</a></li>
+            <li><a href="events.html?category=Workshops" class="footer-link">Hands-on Workshops</a></li>
+            <li><a href="events.html?category=Competitions" class="footer-link">Contests & Debates</a></li>
+          </ul>
+        </div>
+
+        <div>
+          <h4 class="footer-heading">Contact & Help</h4>
+          <ul class="footer-nav">
+            <li style="color: var(--text-secondary); font-size: 0.92rem;">✉️ campusvibe@example.com</li>
+            <li style="color: var(--text-secondary); font-size: 0.92rem;">📍 Student Activity Center, Block B</li>
+            <li style="color: var(--text-secondary); font-size: 0.92rem;">🕒 Mon–Fri: 9:00 AM – 5:00 PM</li>
+            <li style="margin-top: 0.75rem;">
+              <a href="register.html" class="btn btn-outline btn-sm" style="width: 100%;">Online Registration &rarr;</a>
+            </li>
+          </ul>
+        </div>
+      </div>
+
+      <div class="footer-bottom">
+        <div>&copy; 2026 CampusVibe. All rights reserved. (Fictional College Event Portal)</div>
+        <div style="display: flex; gap: 1.5rem;">
+          <a href="about.html" class="footer-link">Privacy Policy</a>
+          <a href="about.html" class="footer-link">Terms of Service</a>
+          <a href="about.html" class="footer-link">Code of Conduct</a>
+        </div>
+      </div>
+    </div>
+  </footer>
+
+  <!-- Scripts -->
+  <script src="js/data.js"></script>
+  <script src="js/script.js"></script>
+  <script src="js/event-details.js"></script>
+</body>
+</html>
